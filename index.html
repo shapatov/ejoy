@@ -1,146 +1,103 @@
-<html lang="bg"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eJOY 2026 - Европейска младежка олимпиада по йнформатика</title>
-<meta name="description" content="Официален сайт на Европейската младежка олимпиада по йнформатика (eJOY) 2026.">
-<style>
-    /* Reset & basic styling */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; }
-    * { text-decoration: none; }
-    /* Header */
-    header { background:#1b1f3b; color:white; padding:2em 1em; text-align:center; }
-    header h1 { font-size:2.2em; margin-bottom:0.5em; }
-    header p { font-size:1.1em; }
+<html lang="bg">
 
-    /* Navigation */
-    nav { display:flex; justify-content:center; gap:1em; background:#2c2f5a; padding:0.8em 0; position:sticky; top:0; z-index:100; }
-    nav a { color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
-    nav a:hover { color:#ffd700; }
-
-    /* Sections */
-    section { max-width:1000px; margin:2em auto; padding:2em; background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    h2 { margin-bottom:1em; color:#1b1f3b; border-bottom:2px solid #1b1f3b; display:inline-block; padding-bottom:0.3em; }
-
-    /* Cards */
-    .cards { display:flex; flex-wrap:wrap; gap:1.5em; }
-    .card { background:#f7f7ff; padding:1.5em; border-radius:8px; flex:1 1 calc(33% - 1em); min-width:250px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-
-    /* Tables */
-    table { width:100%; border-collapse:collapse; margin-top:1em; }
-    th, td { padding:0.8em; border:1px solid #ccc; text-align:left; }
-    th { background:#2c2f5a; color:white; }
-
-    /* Buttons & links */
-    .btn { display:inline-block; padding:0.7em 1.2em; background:#1b1f3b; color:white; border-radius:5px; text-decoration:none; transition:0.3s; }
-    .btn:hover { background:#33367a; }
-
-    /* Footer */
-    footer { text-align:center; padding:1.5em; background:#1b1f3b; color:white; margin-top:2em; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eJOY 2026.5</title>
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.png">
+    <meta name="description" content="Официален сайт на Европейската младежка олимпиада по йнформатика.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8P3VD9BC2M"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8P3VD9BC2M');
+</script>
+
 <body>
+    <header>
+        <img src="static/img/ejoy.png" alt="eJOY Logo" style="height:80px; margin-bottom:10px;">
+        <h1>Европейска младежка олимпиада по йнформатика 2026.5</h1>
+    </header>
+    <nav>
+        <a href="index.html">eJOY 2026.5</a>
+        <a href="2026.html">eJOY 2026</a>
+        <a href="2025.html">eJOY 2025</a>
+    </nav>
 
-<header>
-    <img src="ejoy.png" alt="eJOY Logo" style="height:80px; margin-bottom:10px;">
-    <h1>Европейска младежка олимпиада по йнформатика 2026</h1>
-    <p>Добре дошли в официалния сайт на eJOY!</p>
-</header>
+    <section id="about">
+        <h2>За eJOY</h2>
+        <p>Европейската младежка олимпиада по йнформатика (eJOY) е престижно състезание за млади таланти в
+            йнформатиката. Състезанието е известно със своите съвсем стандартни и обикновени задачи, като например
+            задачата Чешма.</p>
+    </section>
 
-<nav>
-    <a href="#about">За състезанието</a>
-    <a href="#results">Резултати</a>
-    <a href="#invite">Покана</a>
-    <a href="#rules">Правила</a>
-    <a href="#schedule">Програма</a>
-    <a href="#committee">Комисия</a>
-    <a href="#judge">Система</a>
-</nav>
+    <section id="invite">
+        <h2>Покана</h2>
+        <p>Уважаеми млади програмисти,</p>
+        <p>Имаме удоволствието да ви поканим да участвате в European Junior Olympiad in Ynformatics 2026.5 - престижно
+            състезание, което не спазва никои стандарти на международна олимпиада.<br>
+            Очакват ви предизвикателства, които ще развият нелогическото мислене, алгоритмичните умения и креативността
+            ви.<br>
+            Очакваме с нетърпение вашето участие и сме уверени, че ще се забавлявате докато се състезавате!<br>
+            С уважение,<br>
+            Комисия на eJOY 2026.5</p>
+    </section>
 
-<section id="about">
-    <h2>За eJOY 2026</h2>
-    <p>Европейската младежка олимпиада по йнформатика (eJOY) е престижно състезание за млади таланти в програмирането. Състезанието е известно със своите съвсем стандартни и обикновени задачи, като например задачата Чешма.</p>
-</section>
+    <section id="rules">
+        <h2>Правила на състезанието</h2>
+        <ul>
+            <li>Решенията се пишат на език C++, освен ако задачата не изисква противното.</li>
+            <li>Интернетът или външна помощ са стриктно забранени по време на състезанието, освен ако задачата не изисква противното.</li>
+            <li>Състезанието се състои онлайн в 2 дена, в които състезателите получават общо 6-7 задачи.</li>
+            <li>Решенията се оценяват автоматично от оценяващата система.</li>
+        </ul>
+    </section>
 
-<section id="results">
-    <h2><a href="results.pdf">Общо класиране</a></h2><br>
-    <h2>Ден 1 - <a href="results_day1.pdf">класиране</a></h2>
-    <ul>
-        <li>Условия на задачите: <a href="nod.pdf">nod</a>, <a href="testove.pdf">testove</a>, <a href="wordle.pdf">wordle</a></li>
-        <li>Анализи на задачите: <a href="nod.txt">nod</a>, <a href="testove.txt">testove</a>, <a href="wordle.txt">wordle</a></li>
-        <li>Тестове и авторски решения: <a href="nod.zip">nod</a>, <a href="testove.zip">testove</a>, <a href="wordle.zip">wordle</a></li>
-        <li><a href="results_day1.xlsx">Резултати</a> от проверяващата система</li>
-    </ul>
-    <br>
-    <h2>Ден 2 - <a href="results_day2.pdf">класиране</a></h2>
-    <ul>
-        <li>Условия на задачите: <a href="parola.pdf">parola</a>, <a href="permutation.pdf">permutation</a>, <a href="grader67.pdf">grader67</a>, <a href="statement.pdf">statement</a></li>
-        <li>Анализи на задачите: <a href="parola.txt">parola</a>, <a href="permutation.txt">permutation</a>, <a href="grader67.txt">grader67</a>, <a href="statement.txt">statement</a></li>
-        <li>Тестове и авторски решения: <a href="parola.zip">parola</a>, <a href="permutation.zip">permutation</a>, <a href="grader67.zip">grader67</a>, <a href="statement.zip">statement</a></li>
-        <li><a href="results_day2.xlsx">Резултати</a> от проверяващата система</li>
-    </ul>
-</section>
+    <section id="schedule">
+        <h2>Програма</h2><br>
+        Очаквайте скоро!
+    </section>
 
-<section id="invite">
-    <h2>Покана</h2>
-    <p>Уважаеми млади програмисти,</p>
-    <p>Имаме удоволствието да ви поканим да участвате в European Junior Olympiad in Ynformatics 2026 – престижно състезание, което не спазва никои стандарти на международна олимпиада.<br>
-Очакват ви предизвикателства, които ще развият нелогическото мислене, алгоритмичните умения и креативността ви.<br>
-Очакваме с нетърпение вашето участие и сме уверени, че ще се забавлявате докато се състезавате!<br>
-С уважение,<br>
-Организационният комитет на eJOY 2026</p>
-</section>
-
-<section id="rules">
-    <h2>Правила на състезанието</h2>
-    <ul>
-        <li>Решенията се пишат на език C++, освен ако задачата не изисква противното.</li>
-        <li>Интернетът или външна помощ са стриктно забранени по време на състезанието.</li>
-        <li>Състезанието се състои онлайн в 2 дена, в които състезателите получават общо 6-7 задачи.</li>
-        <li>Решенията се оценяват автоматично от оценяващата система.</li>
-    </ul>
-</section>
-
-<section id="schedule">
-    <h2>Програма</h2>
-    <table>
-        <tbody><tr><th>Дата</th><th>Събитие</th></tr>
-        <tr><td>9 - 30 септември 2025</td><td>Тренировъчно състезание върху задачите от eJOY 2025</td></tr>
-        <tr><td>4 октомври 2025, 8:30 - 12:30</td><td>Откриване и ден 1 на eJOY 2026</td></tr>
-        <tr><td>5 октомври 2025, 8:30 - 12:30</td><td>Ден 2 на eJOY 2026</td></tr>
-        <tr><td>5 октомври 2025, до края на деня</td><td>Официално класиране</td></tr>
-        <tr><td>22 - 23 ноември 2025</td><td>Награждаване и закриване на eJOY 2026</td></tr>
-    </tbody></table>
-</section>
-
-<section id="committee">
-    <h2>Организационен комитет</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Димитър Шапатов</h3>
-            <p>Автор, организатор</p>
+    <section id="committee">
+        <h2>Комисия</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Димитър Шапатов</h3>
+                <p>Автор</p>
+            </div>
+            <div class="card">
+                <h3>Кирил Зашев</h3>
+                <p>Автор</p>
+            </div>
+            <div class="card">
+                <h3>Борис Бобев</h3>
+                <p>Организатор</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>Кирил Зашев</h3>
-            <p>Автор, организатор</p>
-        </div>
-        <div class="card">
-            <h3>Борис Бобев</h3>
-            <p>Координатор</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="judge">
-    <h2>Оценяваща система</h2>
-    <p>Всички решения се проверяват автоматично на проверяващата система. Можете да влезете с тестов акаунт на тренировъчно състезание, с име test и парола test123.<br></p>
-    <a href="http://78.83.229.227:8000" class="btn" target="_blank">Отвори оценяваща система</a><br><br><a href="http://78.83.229.227:8999/" class="btn" target="_blank">Отвори оценяваща система за упражнение</a><br><p>За активиране на акаунт в оценяващата система за упражнение се свържете с организаторите.</p>
-</section>
+    <section id="judge">
+        <h2>Оценяваща система</h2>
+        <p>Всички решения се проверяват автоматично на проверяващата система. За активиране на акаунт в арената се свържете с организаторите.<br></p>
+        <a href="http://78.83.229.227:8000" class="btn" target="_blank">Отвори оценяваща система</a><a
+            href="http://78.83.229.227:8999/" class="btn" target="_blank">Отвори арена</a><br>
+    </section>
 
-<footer>
-    © 2026 Европейска младежка олимпиада по йнформатика. Всички права не са запазени.
-</footer>
+    <footer>
+        © 2025 Европейска младежка олимпиада по йнформатика. Всички права не са запазени.
+    </footer>
 
 
 
-</body></html>
+</body>
+
+</html>
