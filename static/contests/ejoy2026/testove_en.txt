@@ -1,0 +1,40 @@
+Analysis of task testove
+
+First we will look at how to generate trees efficiently:
+
+1. Forming trees from a graph:
+In reality there are two most optimal ways: 
+a) With complexity O(NT)
+The idea is to come up with or to use some algorithm which generates a random graph with complexity O(N+M). After that we can easily make a DSU and make a tree.
+We repeat this step until we have generated T distinct trees. We can use a set in order to ensure the uniqueness of the trees.
+b) With complexity O(N^2 * T) 
+The idea is to build a complete graph (every vertex has a direct edge with every other vertex) and to make a tree, maintaining it with a DSU. We repeat this T times. In order to avoid repetitions, we can on every step 
+shuffle the complete graph.
+Note - it is possible for the solution with the complete graph to be reduced to O(NT), but the taking of the edges from the complete graph has to be randomized well.
+
+2. Forming trees directly
+The most optimal solution would look like this:
+We create an array par, in which for every i, par[i] is the parent of i in the current tree. How do we generate par so that we guarantee a tree? This would happen if for every i,
+par[i]<=i-1. This would intuitively guarantee a tree, because according to the statement the trees have to be rooted at 1. That is, for every i, the parent would have a smaller number,
+therefore its parent is located higher up in the tree.
+
+Now let us look at how to find the height of a tree:
+
+The most optimal solution (O(N)):
+In the author solutions you will see ways with bfs and dfs. In reality the idea with bfs is simply to keep in the queue not only the next vertex to traverse, but also how many edges we have passed through to reach this vertex.
+The idea with dfs is to keep the current height as an argument and to increase it.
+This way, when we reach a vertex without outgoing edges (that is, a leaf) we stop and change the maximum if necessary.
+
+Now let us see how we can answer the queries:
+
+Most optimal solution O(QlogT):
+We do this with a segment tree with update over the heights of the generated trees.
+
+Optimal solutions without update (QlogN), (Qsqrt(N))
+We can again use a segment tree without updates, but also sparse tables.
+
+This way our total complexity becomes O(NT + Q log T).
+
+
+Idea, statement, analysis, solutions: Kiril Zashev
+Solutions: Dimitar Shapatov

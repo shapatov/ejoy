@@ -1,0 +1,14 @@
+Analysis of task parola
+
+The idea of the task is to create a password which satisfies given requirements. 
+The intuitive solution, and in fact the one giving full points, is to compose a password and change it until all the conditions are satisfied. 
+The observation here is that when a given condition is satisfied, another one may stop being satisfied. 
+For example, when adding the best move, namely Nf7+, the sum of the digits in the password becomes 32 and a previous part of the password has to be changed.
+
+Two other intuitive solutions for partial points are also shared.
+
+For those interested, the knight cannot be taken, because the black king is in check from the queen and the knight, and after the only move Kg8 follows Nh6#, the knight covers f7, and the queen g7, h8.
+
+
+Idea, statement, analysis, solutions: Dimitar Shapatov
+Solutions: Kiril Zashev

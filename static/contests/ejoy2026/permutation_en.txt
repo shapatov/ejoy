@@ -1,0 +1,58 @@
+Analysis of task permutation
+
+The task introduces us to a typical encode-decode task - we put -1s in a permutation and then we have to return it to its original state. The idea is that the more -1s we put, the 
+better it will be for the points, which are computed by a formula, relative to the best solution. As we know, we cannot use global memory, which makes things slightly harder.
+Let us move on to the solutions of the subtasks:
+
+1. The permutation which is given to encode is sorted in increasing order - that is, of the form 1, 2, 3..n:
+The solution is quite intuitive - we can put -1 at every number of the permutation, because we actually know what permutation has been given to encode. The main idea of this subtask is
+to get feedback from the system that everything is fine and that we have understood the statement.
+
+2. n <= 16-17:
+This task allows the use of the "brute force" method.
+
+3. The optimal solution places only one -1:
+With these constraints we can simply put -1 at the one in the permutation in encode and then in decode replace it with one.
+This works because, as it is said in the statement, -1 is replaced by the first unused number from 1 to n, therefore when we have only one -1 we will get a correct answer.
+
+4. There are no constraints
+The full solution is based on the following idea: in encode we replace with -1 the numbers which are the smallest
+unused so far. That is, we put -1 at the consecutive occurrences of the numbers from 1 to n. For example, if we have the permutation 1 3 2 4 5 we will only be able to put -1
+at 1 and 2, because when we reach 3, we have not used 2 yet, and when we reach 4 and 5 we have not used 3 yet. This is the greedy approach for this task and it guarantees an optimal
+placement of -1s.
+
+
+Observations of the authors:
+When we thought that we had successfully made our first encode-decode task, it turned out that on some tests we were getting wrong answers.
+On some tests we got a correct answer, on others it showed us that the decode permutation consisted only of zeros. Then Mitko made the observation that the system does not recognize
+one of the vitally important folders for encode-decode tasks - manager. The reason for this is that the grading system of eJOY is old (from 2021), when it still did not support encode-decode tasks
+(or they did not exist at all in general). Mitko managed to trick the system and, instead of having a manager folder, he put everything into the grader. But this has its consequences too. In reality the task
+with the current grader can be cheated - see permutation_cheat_100p.cpp. But this can only happen if you know how the grader works, and that is simply not possible during a contest :).
+And since we decided that the trick we used in the grader is quite interesting...
+
+
+Analysis of the grader of task permutation
+In tasks of the encode-decode type the role of the manager is to run the contestant's program two separate times - for encode and decode. The goal of this is the following: even if there is global memory
+shared by the two functions, it becomes useless, because on every run of the program only one of the functions is called. 
+The problem is that this version of the system does not support manager programs. Somehow a program (grader) has to be written which is compiled with another file (the solution) and 
+checks whether there is global memory which is used by the two functions. Of course, in this situation the use of global memory cannot be fully prevented.
+The grader which we implemented uses a greedy strategy for checking the global memory. The function encode is called 2 times - once with the original sequence and once with an arbitrary sequence
+(in this case the same sequence with N+1 at the end). 
+Let us look at three cheat solutions and how they work with the grader:
+
+1. On a call to encode we store the sequence in global memory and return a sequence with N -1s, in order to get maximum points by the scoring formula. On decode we simply return the stored sequence.
+This solution does not work, because on the second call to encode from the grader the sequence in the global memory is overwritten and decode will not return it correctly.
+
+2. We return the same sequence in encode and decode.
+According to the scoring formula this solution is simply not correct, i.e. it does not fill the sequence with any -1s.
+
+3. The solution in permutation_cheat_100p.cpp: on every call to encode the sequence is stored in a list of sequences in the global memory and N -1s are returned. On decode we receive a sequence
+which contains only -1s and our only indicator of which one it is is its size. We simply go over all the stored sequences and look for the one with size N.
+This solution goes for full points, but the contestants could only come up with it if they know that encode is called twice and the second time the sequence has a different size.
+This is in practice simply not possible.
+
+In the end everything turned out perfect and cheating is in reality impossible on the contestants' side.
+
+
+Idea, solutions, analysis, statement: Kiril Zashev
+Solutions and greedy grader: Dimitar Shapatov

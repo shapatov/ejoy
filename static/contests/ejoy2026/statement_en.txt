@@ -1,0 +1,11 @@
+Analysis of task statement
+
+Of course, this task has many different ideas. One possible solution is the task for the sum of 2 numbers, but this gives
+few points, depending on the implementation. One of the provided author solutions is from the task monopoly2 from IATI, 
+which gives the maximum points among the solutions tested by the author, and it is not determined exactly how many, because
+the points depend on the mood of the checker. A solution for 100 points has not been found so far.
+
+For the curious, the checker works through the API of NVIDIA NIM and uses the free model qwen/qwen3-next-80b-a3b-instruct.
+
+
+Author: Dimitar Shapatov

@@ -1,0 +1,35 @@
+Analysis of task grader67
+Before we look at the solutions of the subtasks, let us prove the following claim: "The check for the points of a sequence is done in O(N) given the most optimal sequence with N elements"
+Proof: If we have the most optimal sequence, the only thing we need from it is the difference of the maximum and the minimum element. 
+Whether there are at least two different elements in a sequence and finding the sum of the numbers in a sequence are entirely intuitive and familiar things which we do easily in O(N).
+With this proof we change the task: "Find the difference of the maximum and the minimum element in the most optimal sequence with N elements".
+We move on to the solutions:
+
+First subtask: N<=6,7
+This solution allows us to use the "brute force" method. 
+We look at all possible sequences of numbers and find the one with the smallest difference of the maximum and the minimum element. This is enough for us to solve the subtask.
+
+Second subtask: N<=30
+These constraints would orient us towards an N^4 solution. Here begins the first essential step towards the solution of the task: making a dp.
+What would the states of this dp look like? One example dp would have states {which element we are at}{the sum so far mod n}{difference of elements}{do we have at least two different numbers}
+and every element in it is a pair and contains the largest and the smallest number so far in the optimal sequence up to this element. The transition is intuitive and I do not think it needs an explanation.
+Let us only clarify why the complexity is N^4. Besides going over all the elements, one more fixing of the current element is required.
+
+Third subtask: N<=100
+We can optimize the solution from the previous subtask. We do not need to maintain the difference of the elements. It is simply the difference of the two elements in the value of every element.
+This way we remove one unnecessary loop and the complexity drops to N^3.
+
+Fourth subtask: N<=1067
+This subtask has no fixed solution.
+
+Fifth subtask: N<=1e5+67
+In reality here is the essential idea of the task. Let us prove the following grandiose observation:
+For every N the most optimal sequence always has a difference of the maximum and the minimum element of 2.
+If you have examined the answers from some of the previous dps, or even make the sequences with backtracking, you can make this observation not too hard. Let us prove it in a simple way:
+Let us have a sequence of N ones (in general it does not matter, it can be any number). According to the first condition this is not a valid sequence. If we want to make it valid, we can add 1 to some one and subtract one from another one. 
+This way we guarantee a minimal difference, because there is no way to decrease only one number by one or to increase only one number by one, because the sum changes. It is intuitive that you can apply this idea for every N.
+
+Conclusions: At first glance the task looks like a classic dp, but the second glance reveals the greediness of the full solution, which initially was not anticipated by the authors either.
+
+Author and solutions: Dimitar Shapatov
+Analysis and solutions: Kiril Zashev

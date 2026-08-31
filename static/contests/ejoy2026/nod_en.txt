@@ -1,0 +1,72 @@
+Analysis of task nod
+
+This task troubles us with quite an interesting thing - it makes us write our solution in machine code. In reality the task logically presents us with another challenge - we have to find the GCD of two numbers using only the plus and minus operations. Let us move on to the solutions:
+
+Subtask 1: a=1
+In this case the only divisor of a is one, and as we know every natural number is divisible by one, therefore we simply have to return 1 as the answer.
+
+Subtask 2: a, b<=5
+The constraints allow us to use any kind of "brute force" method.
+
+Subtask 3: a, b<=100
+This subtask has no specific solution. It is simply placed by us in order to reward the participants whose full solution is for some reason slow or wrong.
+
+Subtask 4: a, b<=10^5
+Here is the full solution of the task. If someone knows Euclid's algorithm, they would quickly understand how to solve it. The idea of this ancient algorithm is based on the following thing:
+If we have two positive integers a and b, we can repeat the following:
+
+If a > b, replace a with a - b
+If b > a, replace b with b - a
+We repeat until a != b
+
+Our final number is the GCD.
+
+Let me also give an example:
+Let us find GCD(48, 18)
+
+48 > 18 -> 48 - 18 = 30 -> (30, 18)
+30 > 18 -> 30 - 18 = 12 -> (12, 18)
+18 > 12 -> 18 - 12 = 6 -> (12, 6)
+12 > 6 -> 12 - 6 = 6 -> (6, 6)
+
+-> GCD = 6
+Let us also prove why it is correct:
+Let us have two positive integers a and b. Without loss of generality we assume that a >= b.
+
+Claim:
+
+GCD(a, b) = GCD(a - b, b)
+
+Proof:
+
+Let d be a common divisor of a and b. This means:
+
+d | a (d divides a)
+d | b (d divides b)
+
+Therefore:
+
+d | (a - b)
+(because the difference of two numbers which are divisible by d is also divisible by d)
+
+-> d is a common divisor of a - b and b as well.
+
+Conversely:
+If d | (a - b) and d | b, then:
+
+d | (a - b + b) = a
+
+-> So d is a common divisor of a and b.
+
+Corollary:
+
+The common divisors of (a, b) and (a - b, b) are the same
+-> GCD(a, b) = GCD(a - b, b).
+
+Conclusions: 
+A difficulty in this task is that one has to write something similar to machine code.
+Another difficulty in the implementation is the lack of a function for an unconditional jump to a given line. 
+This can be solved by comparing some number with a register which is not used and always takes the value 0 -> RES := 0, after which the JZ instruction is used.
+
+Author and solutions: Dimitar Shapatov
+Analysis: Kiril Zashev

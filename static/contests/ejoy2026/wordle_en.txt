@@ -1,0 +1,52 @@
+Analysis of task wordle
+
+Subtask 1. |words| = 1
+Here it is enough to try the word.
+
+Subtask 2. |words| <= 6
+This subtask has the goal of rewarding solutions which do not contain the idea of the full solution. 
+Here we can take the first word which matches what query has returned to us so far, and try it until we guess the word. This does not guarantee us full points, but it is a possible solution.
+
+Subtask 3. |words| <= 10^4 + 67
+Here we already have to orient ourselves towards the full solution. There are different solutions for partial points on this subtask, but I will explain only one of the solutions for 100 pts. 
+Here we will use something like a greedy strategy: for every guess we will choose the local optimum, i.e. the most useful word which we can try at the moment. We will not think about future guesses.
+Let us summarize what our task is at the moment: we have a list of words, on every query we reduce the number of possible words, we have to find one of these words while using the queries optimally.
+This sounds a little like binary search. In binary search, if we are told that the number we are looking for is smaller than ours, this splits the numbers which we have to search in 2.
+The idea in this task is one notch more complex. Instead of telling us whether a number is smaller or greater, we are given the letters which match (what query returns) in the two words.
+In binary search we split into two equal parts, but in this case we have to split the words into 3^5 = 243 (the number of possible patterns) parts and to aim for them to be of almost equal size.
+Let us fix one word which we will use (O(n)). If we look at all the patterns, we can check how many words fall into each of them and therefore what the probability is of this pattern coming up.
+The goal of our greedy is to choose the most useful word, and the usefulness of each word will look something like this:
+E = sum of (p(w) * (some factor which shows us how useful it is to us if this pattern shows up for this word)) over all patterns w. 
+In our case this factor is simply how well the patterns split the word. As we said, we want these 243 parts to be of roughly equal size. 
+
+How can we compute this? At first glance it sounds quite complex. Let us give ourselves an example.
+We have 24 words, split into 8 patterns instead of 243.
+Let us say that every pattern has an equal number of words => 3 words per pattern. The probability of pattern w coming up on some guess is p(w)=3/24=1/8
+We want to measure how useful a given pattern is, that is, how many words we can eliminate if we get it.
+If the pattern has few words it is useful, because the others drop out. If it has many words, it is not useful, because not many words drop out.
+Therefore the usefulness of the pattern is inversely proportional to its probability: usefulness(w) ~ 1/p(w).
+For every word we want its average usefulness, so that at the end we can choose the most useful one and guess it. To do so we have to find this factor.
+If we set the factor to be equal directly to 1/p(w), then we get E = sum of (p(w) * (1/p(w))) over all patterns = sum of (1) over all patterns.
+This simply shows us the number of patterns, but does not account for the different probabilities if the parts into which they split the words are not equal.
+We need a usefulness function for the pattern which is inversely proportional to p(w). The author solution uses log2, but log10 also works, and sqrt gives 73.9 points. It can probably be proven why it is not optimal.
+We now have usefulness(w) = log2 (1/p(w)).
+If we continue with the example, the usefulness of every pattern is log2(1/p)=log2(8)=3. That is, the average usefulness of a given word is E = sum of (p(w) * log2(1/p(w))) over all patterns w, which in this case is equal to 3.
+This value is the same for all words in the example, because every pattern has an equal number of words.
+
+And so we found that the usefulness of some word is:
+E = sum of (p(w) * log2(1/p(w))) over all patterns w.
+
+For every guess we simply sort the words by usefulness and choose the best one. This way the complexity becomes O(n^2) in the worst case (which here should not be reached) and O(n log n) approximately in the general case.
+
+In fact the formula comes from information theory, where E denotes entropy and is measured in bits.
+
+Solution for 73.9 points (Kiki)
+This solution may not get the full number of points, but it uses a more intuitive idea:
+We fix one word and assume that it is the correct one. We go over all the others and make a "pattern" (like the one which the query function returns) with respect to 
+this fixed word. We do this for every word. The optimal word will be the one which creates the maximum number of distinct patterns. After query returns to us the real pattern, we remove all the words which do not satisfy the correctness condition. We repeat this whole idea while there are words in the list.
+The problem with this solution is probably that if there are several words with the same maximum number of distinct patterns, the solution has no sensible indicator of which of them all to take. This can increase the number of calls to query.
+
+There are also other partial solutions, made by the contestants during the contest, which were not anticipated by the authors but are comparatively intuitive.
+
+Idea and solutions: Kiril Zashev
+Statement, solutions, analysis: Dimitar Shapatov
