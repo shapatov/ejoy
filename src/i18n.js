@@ -19,7 +19,7 @@ i18n
         detection: {
             order: ['localStorage', 'navigator'],
             lookupLocalStorage: 'lang',
-            convertDetectedLanguage: 'languageOnly',
+            convertDetectedLanguage: (lng) => lng.split('-')[0],
         },
         debug: false,
         react: {

@@ -5,8 +5,8 @@ import i18n from 'i18next';
 import { useState } from "react";
 
 export const getLanguage = () => {
-    return i18n.language.substring(0, 2).toUpperCase() ||
-        (typeof window !== 'undefined' && window.localStorage.i18nextLng.substring(0, 2).toUpperCase()) ||
+    return i18n.language.split('-')[0].toUpperCase() ||
+        (typeof window !== 'undefined' && window.localStorage.i18nextLng.split('-')[0].toUpperCase()) ||
         'bg';
 };
 
