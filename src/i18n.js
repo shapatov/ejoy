@@ -8,8 +8,9 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: 'bg',
+        fallbackLng: 'en',
         load: 'languageOnly',
+        supportedLngs: ['en', 'bg'],
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
@@ -19,7 +20,10 @@ i18n
         detection: {
             order: ['localStorage', 'navigator'],
             lookupLocalStorage: 'lang',
-            convertDetectedLanguage: (lng) => lng.split('-')[0],
+            convertDetectedLanguage: (lng) => {
+                const base = lng.split('-')[0];
+                return ['en', 'bg'].includes(base) ? base : 'en';
+            },
         },
         debug: false,
         react: {

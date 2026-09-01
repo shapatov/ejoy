@@ -4,10 +4,14 @@ import { useEffect } from "react";
 import i18n from 'i18next';
 import { useState } from "react";
 
+export const normalizeLang = (lng) => { 
+    return ['en', 'bg'].includes(lng.split('-')[0]) ? lng.split('-')[0].toUpperCase() : 'EN'; 
+}
+
 export const getLanguage = () => {
-    return i18n.language.split('-')[0].toUpperCase() ||
-        (typeof window !== 'undefined' && window.localStorage.i18nextLng.split('-')[0].toUpperCase()) ||
-        'bg';
+    return normalizeLang(i18n.language) ||
+        (typeof window !== 'undefined' && normalizeLang(window.localStorage.i18nextLng)) ||
+        'EN';
 };
 
 export function Header({ year }) {
