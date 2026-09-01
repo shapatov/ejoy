@@ -9,6 +9,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'bg',
+        load: 'languageOnly',
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
@@ -18,6 +19,7 @@ i18n
         detection: {
             order: ['localStorage', 'navigator'],
             lookupLocalStorage: 'lang',
+            convertDetectedLanguage: 'languageOnly',
         },
         debug: false,
         react: {
