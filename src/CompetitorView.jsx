@@ -28,7 +28,7 @@ export function CompetitorView({ id, onClose }) {
                     <div style={{ display: "flex", alignItems: "flex-start", gap: "30px" }}>
                         <img src={`img/${c.firstName.toLowerCase()}${c.lastName.toLowerCase()}.jpg`} onError={(e) => { e.target.src = "img/error.png"; }} width="190px" alt={fullName}></img>
                         <div>
-                            <p style={{ fontSize: "38px", fontWeight: "bold" }}>{fullName}</p>
+                            <p style={{ fontSize: "35px", fontWeight: "bold" }}>{fullName}</p>
                             <p style={{ fontSize: "24px" }}>{getFlag(c.country)} {c.city ? c.city + ", " : ""} {c.country}</p>
                             {c.school && <p style={{ fontSize: "24px" }}>🏫 {c.school}</p>}
                             {c.grade && <p style={{ fontSize: "24px" }}>🎓 {getGrade(c.grade)}{t("grade")}</p>}
