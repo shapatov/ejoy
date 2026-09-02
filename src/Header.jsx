@@ -25,9 +25,9 @@ export function Header({ year }) {
             <nav>
                 <Link to="/">eJOY 2027</Link>
                 <div className="dropdown-container">
-                    <Link onClick={() => setDropdown(!dropdown)}>
+                    <a href="#" onClick={(e) => {e.preventDefault(); setDropdown(!dropdown);}}>
                         {t("previous")}
-                    </Link>
+                    </a>
 
                     <div className={`dropdown-menu ${dropdown ? "open" : ""}`}>
                         <Link to="/2026">eJOY 2026</Link>
