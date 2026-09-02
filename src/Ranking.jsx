@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom"
-import { NewAbout, NewRules } from "./NewComponents"
-import { Results } from "./Results"
-import { Header } from "./Header"
-import { useTranslation } from "react-i18next"
-import { CompetitorView } from "./CompetitorView"
 import { useState } from "react"
-import contests from '../public/data/contests.json'
+import { useTranslation } from "react-i18next"
 import contestants from '../public/data/contestants.json'
+import contests from '../public/data/contests.json'
+import { CompetitorView } from "./CompetitorView"
+import { Header } from "./Header"
 import { getFlag } from "./helpers"
 
 export function Ranking() {

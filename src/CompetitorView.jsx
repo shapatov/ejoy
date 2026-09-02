@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import contestants from '../public/data/contestants.json';
 import contests from '../public/data/contests.json';
 import { getFlag, getGrade } from "./helpers";
-import { useState } from "react";
 
 export function CompetitorView({ id, onClose }) {
     let G = 0, S = 0, B = 0, HM = 0;

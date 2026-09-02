@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom"
-import { NewAbout, NewRules } from "./NewComponents"
-import { Results } from "./Results"
-import { Header } from "./Header"
 import { useTranslation } from "react-i18next"
-import { Prefooter } from "./Prefooter"
 import { Footer } from "./Footer"
+import { Header } from "./Header"
+import { Prefooter } from "./Prefooter"
+import { Results } from "./Results"
 
 export function EJOY2025() {
     const { t } = useTranslation();

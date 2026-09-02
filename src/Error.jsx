@@ -1,11 +1,5 @@
-import { Link } from "react-router-dom"
-import { NewAbout, NewRules } from "./NewComponents"
-import { Results } from "./Results"
-import { Header } from "./Header"
-import { useTranslation } from "react-i18next"
-import { CompetitorView } from "./CompetitorView"
-import { Prefooter } from "./Prefooter"
 import { Footer } from "./Footer"
+import { Header } from "./Header"
 
 export function Error() {
     return (

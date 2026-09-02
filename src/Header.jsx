@@ -1,8 +1,7 @@
-import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
-import { useEffect } from "react";
 import i18n from 'i18next';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { getLanguage } from "./helpers";
 
 export function Header({ year }) {
