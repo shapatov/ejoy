@@ -18,6 +18,7 @@ export function getFlag(country) {
 }
 
 export const normalizeLang = (lng) => {
+    if (!lng) return "";
     return ['en', 'bg'].includes(lng.split('-')[0]) ? lng.split('-')[0].toUpperCase() : 'EN';
 }
 

@@ -55,7 +55,7 @@ export function EJOY2026() {
                         </tr>
                         <tr>
                             <td>5 {t("october")} 2025, 8:30 - 12:30</td>
-                            <td>{t("day")} 2 of eJOY 2026</td>
+                            <td>{t("day")} 2 {t("of")} eJOY 2026</td>
                         </tr>
                         <tr>
                             <td>5 {t("october")} 2025, {t("endofday")}</td>

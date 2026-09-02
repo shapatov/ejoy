@@ -214,6 +214,7 @@ footer {
     nav {
         flex-wrap: wrap;
         padding-right: 1em;
+        position: static;
     }
 
     .lang-switch {
@@ -223,4 +224,26 @@ footer {
         justify-content: flex-end;
         margin-top: 0.6em;
     }
+}
+
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+#overlay > div {
+    width: max-content;
+    max-width: min(92vw, 900px);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+#overlay > div > div > div:first-child { flex-wrap: wrap; }
+#overlay img { max-width: 40vw; }
+
+@media (max-width: 560px) {
+    #overlay > div { padding: 48px 16px 24px !important; width: 100%; }
+    #overlay > div > div > div:first-child { gap: 16px !important; }
+    #overlay img { width: 120px !important; }
+    #overlay p[style*="38px"] { font-size: 24px !important; }
+    #overlay p[style*="24px"] { font-size: 16px !important; }
+    .medalTr td { font-size: 20px; padding-left: 8px; padding-right: 8px; }
+    th, td { padding: 0.45em; font-size: 0.9em; }
+    section { padding: 1em; margin: 1em auto; }
 }

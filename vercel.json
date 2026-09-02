@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/((?!assets|contests|img|locales|data|.*\\..*).*)",
+            "destination": "/index.html"
+        }
+    ]
+}

@@ -50,32 +50,33 @@ export function Ranking() {
     return (
         <>
             {opened == 1 && <CompetitorView id={loadedId} onClose={() => setOpened(0)}></CompetitorView>}
-            <Header year={2027}></Header>
+            <Header year=""></Header>
             <section>
                 <h1>{t("rankl")}</h1><br></br>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>{t('rank')}</th>
-                            <th style={{ cursor: "pointer" }} onClick={() => srt("name")}>{t('participant')}{sortBy == "name" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
-                            <th style={{ cursor: "pointer" }} onClick={() => srt("country")}>{t('country')}{sortBy == "country" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
-                            <th style={{ cursor: "pointer" }} onClick={() => srt("participations")}>{t('participations')}{sortBy == "participations" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
-                            <th style={{ cursor: "pointer" }} onClick={() => srt("total")}>{t('total')}{sortBy == "total" && clicked == 1 && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {sortedData.map((item) => (
-                            <tr style={{ cursor: "pointer" }} onClick={() => { console.log(item["id"]); setLoadedId(item["id"] + 1); setOpened(1); }} key={item["name"]}>
-                                <td>{sortedData.filter(t => cmp(t, item) == -1).length + 1}</td>
-                                <td>{item["name"]}</td>
-                                <td>{getFlag(contestants[item["id"]]["country"])} {contestants[item["id"]]["country"]}</td>
-                                <td>{item["participations"]}</td>
-                                <td>{item["total"].toFixed(2)}</td>
+                <div className="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{t('rank')}</th>
+                                <th style={{ cursor: "pointer" }} onClick={() => srt("name")}>{t('participant')}{sortBy == "name" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
+                                <th style={{ cursor: "pointer" }} onClick={() => srt("country")}>{t('country')}{sortBy == "country" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
+                                <th style={{ cursor: "pointer" }} onClick={() => srt("participations")}>{t('participations')}{sortBy == "participations" && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
+                                <th style={{ cursor: "pointer" }} onClick={() => srt("total")}>{t('total')}{sortBy == "total" && clicked == 1 && <span style={{ fontWeight: "bold" }}>{dir == 0 ? <> &#8595;</> : <> &#8593;</>}</span>}</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {sortedData.map((item) => (
+                                <tr style={{ cursor: "pointer" }} onClick={() => { console.log(item["id"]); setLoadedId(item["id"] + 1); setOpened(1); }} key={item["name"]}>
+                                    <td>{sortedData.filter(t => cmp(t, item) == -1).length + 1}</td>
+                                    <td>{item["name"]}</td>
+                                    <td>{getFlag(contestants[item["id"]]["country"])} {contestants[item["id"]]["country"]}</td>
+                                    <td>{item["participations"]}</td>
+                                    <td>{item["total"].toFixed(2)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </>
     )

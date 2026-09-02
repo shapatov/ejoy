@@ -38,7 +38,8 @@ export function Header({ year }) {
                 <Link to="/hof">Hall of Fame</Link>
                 <Link to="/ranking">{t("rankl")}</Link>
                 <span className="lang-switch">
-                    <a href="#" className="active" onClick={() => {
+                    <a href="#" className="active" onClick={(e) => {
+                        e.preventDefault();
                         const newLang = (buttonText == 'BG' ? 'en' : 'bg');
                         setButtonText(newLang.toUpperCase());
                         i18n.changeLanguage(newLang);

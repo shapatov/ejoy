@@ -13,6 +13,7 @@ import { EJOY2025 } from './2025.jsx'
 import { Prefooter } from './Prefooter.jsx'
 import { HoF } from './HoF.jsx'
 import { Ranking } from './Ranking.jsx' 
+import { Error } from './Error.jsx'
 
 function App() {
     const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/2025" element={<EJOY2025 />} />
                 <Route path="/hof" element={<HoF />} />
                 <Route path="/ranking" element={<Ranking />} />
+                <Route path="*" element={<Error />} />
             </Routes>
 
         </BrowserRouter>
