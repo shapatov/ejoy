@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { Fragment } from "react/jsx-runtime"
-import { getLanguage } from "./Header";
+import { getLanguage } from "./helpers";
 
 export function Results({ year, tasks, hasSol = true, hasBOSRes = true, analysisExt = "pdf", noAnalysis = [], hasBGAnalysis = true, hasENRanking = false }) {
     const { t } = useTranslation();
