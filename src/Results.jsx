@@ -14,7 +14,7 @@ export function Results({ year, tasks, hasSol = true, hasBOSRes = true, analysis
         <>
             <section id="results">
                 <h2><a href={`contests/ejoy${year}/results${rankingLangExt}.pdf`}>{t("final")}</a></h2><br></br>
-                
+
                 {["1", "2", "0"].map((day) => (
                     tasks[`day${day}`] && (
                         <Fragment key={day}>
@@ -23,21 +23,21 @@ export function Results({ year, tasks, hasSol = true, hasBOSRes = true, analysis
                                 <li key={1}>{t("stat")}:<> </>
                                     {
                                         tasks[`day${day}`].map(task =>
-                                            <Fragment key={task}><a href={`contests/ejoy${year}/${task}${statementLangExt}.pdf`}>{task}</a>{task!=tasks[`day${day}`][tasks[`day${day}`].length-1] && <>, </>}</Fragment>
+                                            <Fragment key={task}><a href={`contests/ejoy${year}/${task}${statementLangExt}.pdf`}>{task}</a>{task != tasks[`day${day}`][tasks[`day${day}`].length - 1] && <>, </>}</Fragment>
                                         )
                                     }
                                 </li>
                                 {(analysisExt) && <li key={2}>{t("editorial")}:<> </>
                                     {
                                         tasks[`day${day}`].map(task =>
-                                            <Fragment key={task}>{noAnalysis.includes(task) ? <>{task}</> : <a href={`contests/ejoy${year}/${task}_analysis${analysisLangExt}.${analysisExt}`}>{task}</a>}{task!=tasks[`day${day}`][tasks[`day${day}`].length-1] && <>, </>}</Fragment>
+                                            <Fragment key={task}>{noAnalysis.includes(task) ? <>{task}</> : <a href={`contests/ejoy${year}/${task}_analysis${analysisLangExt}.${analysisExt}`}>{task}</a>}{task != tasks[`day${day}`][tasks[`day${day}`].length - 1] && <>, </>}</Fragment>
                                         )
                                     }
                                 </li>}
                                 <li key={3}>{t("tests")}:<> </>
                                     {
                                         tasks[`day${day}`].map(task =>
-                                            <Fragment key={task}><a href={`contests/ejoy${year}/${task}.zip`}>{task}</a>{task!=tasks[`day${day}`][tasks[`day${day}`].length-1] && <>, </>}</Fragment>
+                                            <Fragment key={task}><a href={`contests/ejoy${year}/${task}.zip`}>{task}</a>{task != tasks[`day${day}`][tasks[`day${day}`].length - 1] && <>, </>}</Fragment>
                                         )
                                     }
                                 </li>

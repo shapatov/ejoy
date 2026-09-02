@@ -8,6 +8,8 @@ import { getLanguage } from "./helpers";
 export function Header({ year }) {
     const { t } = useTranslation();
 
+    const [dropdown, setDropdown] = useState(false);
+
     useEffect(() => {
         document.title = `eJOY ${year}`;
     }, [year]);
@@ -22,8 +24,19 @@ export function Header({ year }) {
             </header>
             <nav>
                 <Link to="/">eJOY 2027</Link>
-                <Link to="/2026">eJOY 2026</Link>
-                <Link to="/2025">eJOY 2025</Link>
+                <div className="dropdown-container">
+                    <Link onClick={() => setDropdown(!dropdown)}>
+                        {t("previous")}
+                    </Link>
+
+                    <div className={`dropdown-menu ${dropdown ? "open" : ""}`}>
+                        <Link to="/2026">eJOY 2026</Link>
+                        <Link to="/2025">eJOY 2025</Link>
+                    </div>
+                </div>
+
+                <Link to="/hof">Hall of Fame</Link>
+                <Link to="/ranking">{t("rankl")}</Link>
                 <span className="lang-switch">
                     <a href="#" className="active" onClick={() => {
                         const newLang = (buttonText == 'BG' ? 'en' : 'bg');

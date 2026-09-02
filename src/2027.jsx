@@ -3,6 +3,9 @@ import { NewAbout, NewRules } from "./NewComponents"
 import { Results } from "./Results"
 import { Header } from "./Header"
 import { useTranslation } from "react-i18next"
+import { CompetitorView } from "./CompetitorView"
+import { Prefooter } from "./Prefooter"
+import { Footer } from "./Footer"
 
 export function EJOY2027() {
     const { t } = useTranslation();
@@ -47,6 +50,9 @@ export function EJOY2027() {
                     </tbody>
                 </table>
             </section>
+
+            <Prefooter></Prefooter>
+            <Footer></Footer>
         </>
     )
 }

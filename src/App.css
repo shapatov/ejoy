@@ -36,7 +36,7 @@ header p {
 nav {
     display: flex;
     justify-content: center;
-    gap: 1em;
+    gap: 2em;
     background: #0e6b33;
     padding: 0.8em 0;
     position: sticky;
@@ -165,6 +165,49 @@ footer {
     color: #0e6b33;
     background: white;
     border-color: white;
+}
+
+.medalTr td {
+    border: 2px solid gray;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #0e6b33;
+    border: none;
+
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    white-space: nowrap;
 }
 
 @media (max-width: 560px) {

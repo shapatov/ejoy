@@ -3,6 +3,8 @@ import { NewAbout, NewRules } from "./NewComponents"
 import { Results } from "./Results"
 import { Header } from "./Header"
 import { useTranslation } from "react-i18next"
+import { Prefooter } from "./Prefooter"
+import { Footer } from "./Footer"
 
 export function EJOY2026() {
     const { t } = useTranslation();
@@ -66,6 +68,9 @@ export function EJOY2026() {
                     </tbody>
                 </table>
             </section>
+
+            <Prefooter></Prefooter>
+            <Footer></Footer>
         </>
     )
 }
