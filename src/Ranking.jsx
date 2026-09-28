@@ -63,7 +63,7 @@ export function Ranking() {
                         </thead>
                         <tbody>
                             {sortedData.map((item) => (
-                                <tr style={{ cursor: "pointer" }} onClick={() => { console.log(item["id"]); setLoadedId(item["id"] + 1); setOpened(1); }} key={item["name"]}>
+                                <tr style={{ cursor: "pointer" }} onClick={() => { setLoadedId(item["id"] + 1); setOpened(1); }} key={item["name"]}>
                                     <td>{sortedData.filter(t => cmp(t, item) == -1).length + 1}</td>
                                     <td>{item["name"]}</td>
                                     <td>{getFlag(contestants[item["id"]]["country"])} {contestants[item["id"]]["country"]}</td>
