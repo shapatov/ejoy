@@ -80,7 +80,6 @@ export function HoF() {
                     </table>
                 </div>
             </section>
-            <Prefooter></Prefooter>
             <Footer></Footer>
         </>
     )
