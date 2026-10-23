@@ -5,6 +5,7 @@ import contests from '../public/data/contests.json'
 import { CompetitorView } from "./CompetitorView"
 import { Header } from "./Header"
 import { getFlag } from "./helpers"
+import { Footer } from "./Footer"
 
 export function Ranking() {
     const { t } = useTranslation();
