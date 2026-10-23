@@ -75,6 +75,7 @@ export function Ranking() {
                     </table>
                 </div>
             </section>
+            <Footer></Footer>
         </>
     )
 }
