@@ -38,10 +38,12 @@ export function HoF() {
     };
     function cmp(a, b) {
         if(sortBy=="default") {
-            for (const m of ["G", "S", "B", "HM", "total", "participations"]) {
-                if (a[m] > b[m]) return dir ? 1 : -1;
-                if (a[m] < b[m]) return dir ? -1 : 1;
+            for (const m of ["G", "S", "B", "HM", "total"]) {
+                if (a[m] > b[m]) return -1;
+                if (a[m] < b[m]) return 1;
             }
+            if (a["participations"] > b["participations"]) return 1;
+            if (a["participations"] < b["participations"]) return -1;
             return 0;
         }
         if (a[sortBy] > b[sortBy]) return dir ? 1 : -1;
