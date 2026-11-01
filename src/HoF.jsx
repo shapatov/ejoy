@@ -9,7 +9,7 @@ import { Footer } from "./Footer"
 
 export function HoF() {
     const { t } = useTranslation();
-    const [sortBy, setSortBy] = useState("total");
+    const [sortBy, setSortBy] = useState("G");
     const [dir, setDir] = useState(0);
     const [clicked, setClicked] = useState(0);
     const [loadedId, setLoadedId] = useState(0);
