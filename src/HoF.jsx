@@ -9,7 +9,7 @@ import { Footer } from "./Footer"
 
 export function HoF() {
     const { t } = useTranslation();
-    const [sortBy, setSortBy] = useState("G");
+    const [sortBy, setSortBy] = useState("default");
     const [dir, setDir] = useState(0);
     const [clicked, setClicked] = useState(0);
     const [loadedId, setLoadedId] = useState(0);
@@ -37,6 +37,13 @@ export function HoF() {
         }
     };
     function cmp(a, b) {
+        if(sortBy=="default") {
+            for (const m of ["G", "S", "B", "HM", "total", "participations"]) {
+                if (a[m] > b[m]) return dir ? 1 : -1;
+                if (a[m] < b[m]) return dir ? -1 : 1;
+            }
+            return 0;
+        }
         if (a[sortBy] > b[sortBy]) return dir ? 1 : -1;
         if (a[sortBy] < b[sortBy]) return dir ? -1 : 1;
         return 0;
