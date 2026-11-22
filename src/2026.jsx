@@ -12,18 +12,20 @@ export function EJOY2026() {
 
             <section id="about">
                 <h2>{t('about')} eJOY</h2>
-                <p>{t('about2026')}</p>
+                <p dangerouslySetInnerHTML={{ __html: t('about2026') }} />
             </section>
 
             <Results year={2026} tasks={{
                 "day1": ["nod", "testove", "wordle"],
                 "day2": ["parola", "permutation", "grader67", "statement"]
             }} hasSol={false} hasENRanking={true} analysisExt="txt"></Results>
-
+            
+            {/*
             <section id="invite">
                 <h2>{t("invite")}</h2>
                 <p style={{whiteSpace: "pre-line"}}>{t("invite1").replaceAll("xxxx", "2026")}</p>
             </section>
+            */}
 
             <section id="rules">
                 <h2>{t("rules")}</h2>

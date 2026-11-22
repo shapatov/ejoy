@@ -12,7 +12,7 @@ export function EJOY2025() {
 
             <section id="about">
                 <h2>{t("about")} eJOY</h2>
-                <p>{t("about2025")}</p>
+                <p dangerouslySetInnerHTML={{ __html: t('about2025') }} />
             </section>
 
             <Results year={2025} tasks={{

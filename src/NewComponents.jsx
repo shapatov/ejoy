@@ -5,7 +5,8 @@ export function NewAbout() {
     return (
         <section id="about">
             <h2>{t('about')} eJOY</h2>
-            <p>{t('aboutnew1')}<br></br>{t('aboutnew2')} <a href="https://discord.gg/UwraDb4bG4">{t('aboutnew3')}.</a></p>
+            <p dangerouslySetInnerHTML={{ __html: t('aboutnew1') }} />
+            <p>{t('aboutnew2')} <a href="https://discord.gg/UwraDb4bG4">{t('aboutnew3')}.</a></p>
         </section>
     )
 }
